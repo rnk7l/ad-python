@@ -1,0 +1,7 @@
+def pul_11(*num):
+    return sum(num)
+
+def total_numbers(*nums):
+    return pul_11(*nums)
+
+print(total_numbers(1, 2, 3, 4, 5))
