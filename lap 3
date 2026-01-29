@@ -1,0 +1,65 @@
+students = {
+    "S001": {
+        "name": "Alice Chen",
+        "courses": {
+            "CS101": {"grade": 92, "credits": 3},
+            "MATH201": {"grade": 88, "credits": 4},
+            "AI301": {"grade": 95, "credits": 3},
+        },
+        "advisor": "Dr. Smith",
+    },
+    "S002": {
+        "name": "Bob Lee",
+        "courses": {
+            "CS101": {"grade": 85, "credits": 3},
+            "MATH201": {"grade": 90, "credits": 4},
+        },
+        "advisor": "Dr. Patel",
+    },
+}
+
+s = students
+
+a = s["S001"]["courses"]["AI301"]["grade"]
+print(a)
+
+p = 0
+c = 0
+for x in s["S002"]["courses"].values():
+    p += x["grade"] * x["credits"]
+    c += x["credits"]
+
+g = p / c
+print(g)
+
+n = []
+for x in s.values():
+    if "CS101" in x["courses"]:
+        n.append(x["name"])
+
+print(n)
+
+t = 0
+k = 0
+for x in s.values():
+    for y in x["courses"].values():
+        t += y["grade"]
+        k += 1
+
+m = t / k
+print(m)
+
+h = 0
+u = ""
+for x in s.values():
+    p = 0
+    c = 0
+    for y in x["courses"].values():
+        p += y["grade"] * y["credits"]
+        c += y["credits"]
+    g = p / c
+    if g > h:
+        h = g
+        u = x["name"]
+
+print(u, h)
